@@ -12,55 +12,44 @@
       padding: 0;
       background-color: #f4f4f9;
       display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
-    header {
+    /* Sidebar styles */
+    .sidebar {
+      width: 250px;
       background-color: #333;
       color: white;
       padding: 20px;
+      position: fixed;
+      height: 100%;
+    }
+
+    .sidebar h2 {
       text-align: center;
-      width: 100%;
+      color: #fff;
     }
 
-    header h1 {
-      margin: 0;
-    }
-
-    .content {
-      display: flex;
-      width: 100%;
-      max-width: 1200px;
-      margin: 40px 20px;
-    }
-
-    .about {
-      width: 30%;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      margin-right: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .about h2 {
-      text-align: center;
-      color: #333;
-    }
-
-    .about img {
-      width: 100%;
-      height: auto;
+    .sidebar img {
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      margin-bottom: 20px;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    .sidebar p {
+      text-align: center;
+      color: #ccc;
+    }
+
+    /* Main content section (projects) */
+    .main-content {
+      margin-left: 270px; /* to account for the sidebar */
+      padding: 40px 20px;
+      flex-grow: 1;
     }
 
     .projects {
-      flex-grow: 1;
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
@@ -102,30 +91,31 @@
       color: white;
       text-align: center;
       padding: 20px;
-      width: 100%;
       position: relative;
       bottom: 0;
+      width: 100%;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Your Name</h1>
-    <p>Engineering Projects & Portfolio</p>
-  </header>
+  <!-- Sidebar Section -->
+  <div class="sidebar">
+    <img src="portrait.jpg" alt="Your Portrait"> <!-- Replace with your portrait image -->
+    <h2>Your Name</h2>
+    <p>Engineer | Problem Solver | Innovator</p>
+    <p>Hello! I'm an engineer passionate about creating solutions to complex problems. Explore my projects to see my work.</p>
+  </div>
 
-  <div class="content">
-    <!-- About Section -->
-    <div class="about">
-      <img src="portrait.jpg" alt="Your Portrait"> <!-- Replace with your portrait image -->
-      <h2>About Me</h2>
-      <p>Hello! I am an engineer passionate about creating innovative solutions and solving complex problems. My expertise spans various fields of engineering, including software development, electronics, and mechanical design. Here, you can explore my projects and see the work I've done in different areas.</p>
-    </div>
+  <!-- Main Content Section (Projects) -->
+  <div class="main-content">
+    <header>
+      <h1>Engineering Projects</h1>
+      <p>Explore my engineering projects, showcasing my work in various domains.</p>
+    </header>
 
-    <!-- Projects Section -->
-    <div class="projects">
-      <h2>My Projects</h2>
+    <!-- Projects -->
+    <section class="projects">
       <div class="project-card">
         <h3>Project 1: Engineering System A</h3>
         <p>A description of your first engineering project. This could include the problem you solved, the technologies used, and the impact.</p>
@@ -133,9 +123,4 @@
       </div>
 
       <div class="project-card">
-        <h3>Project 2: Mechanical Design B</h3>
-        <p>Description of your second project. Mention the approach, tools, and outcomes of the design.</p>
-        <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
-      </div>
-
-    
+   
